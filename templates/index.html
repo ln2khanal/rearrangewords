@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag and Drop Categorization</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+  <header>
+    सब्दलाई सहि समुहमा राख्नुहोस्।
+  </header>
+  <div id="white-screen"></div>
+  <div id="container"></div>
+  
+  <div id="footer">
+    <div id="itemRow" class="task-row" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="progressRow">
+      <span id="progressText">0% Completed</span>
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
+      </div>
+      <div id="reload-game">
+        <a href="{{url_for("index")}}"><img src="{{url_for('static', filename='images/reload-icon.png')}}" alt="Reload Game" title="Reload Game"></a>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
